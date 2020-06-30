@@ -1,7 +1,9 @@
-# WEBでアバターになってチャットするサンプル
+# web_avatar_sample
 
-* 1:1通信のみ対応
-* Chromeのみ対応
+WebRTC and VRM sample.
+
+* 1:1 webrtc communitaiton. 
+* use VRM avatar.
 
 <img src='./image/demo.gif' width='480px' />
 
@@ -11,14 +13,20 @@ cd server
 docker-compose up
 ```
 
-* localhost:8000でWebSocketサーバが起動します。
-* チャットする時に必要です。
-
 ## frontend
+
 ```
 yarn 
 yarn start
 ```
 
-* localhost:4001で画面確認できます。
+### three-vrm operation sample
 
+http://localhost:4001
+
+### chat Sample
+
+* open 2 chrome window
+* access http://localhost:4001/chat
+* drag and drop .vrm file
+* wait for a while then start communiation
