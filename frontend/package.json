@@ -1,0 +1,85 @@
+{
+  "name": "web_avatar_sample",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "private": true,
+  "scripts": {
+    "build": "react-app-rewired build",
+    "format:check": "npm run format:js -- --list-different",
+    "format:fix": "npm run format:js -- --write",
+    "format:js": "prettier '**/*.@(js|ts|tsx)'",
+    "lint": "eslint 'src/**/*.@(ts|tsx)'",
+    "lint:fix": "npm run lint -- --fix",
+    "mock": "node mock-server.js",
+    "start": "PORT=4001 react-app-rewired start",
+    "start:dev": "run-p start:dev:*",
+    "start:dev:app_server": "npm start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.@(js|ts|tsx|graphql)": [
+      "npm run format:fix",
+      "npm run lint:fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "facetransfer": "git+https://github.com/jeeliz/jeelizWeboji.git#e3ccd30be85fc3cc1281803b338a91fa68e72b1f",
+    "three": "0.114.0",
+    "@pixiv/three-vrm": "0.3.4",
+    "camera-controls": "^1.12.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "react-use": "15.1.0",
+    "uuid": "8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "13.13.6",
+    "@types/react": "16.9.35",
+    "@types/react-dom": "16.9.8",
+    "@types/react-router-dom": "5.1.5",
+    "@types/uuid": "7.0.3",
+    "@typescript-eslint/eslint-plugin": "2.33.0",
+    "@typescript-eslint/parser": "2.33.0",
+    "eslint": "6.8.0",
+    "eslint-config-react-app": "5.2.1",
+    "eslint-config-airbnb": "18.1.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-jest": "23.13.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.3",
+    "eslint-plugin-react": "7.20.0",
+    "eslint-plugin-react-hooks": "4.0.2",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.3",
+    "minimist": "1.2.5",
+    "npm-check": "5.9.2",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.0.5",
+    "raw-loader": "4.0.1",
+    "customize-cra": "0.9.1",
+    "worker-plugin": "4.0.3",
+    "react-app-rewired": "2.1.6",
+    "react-dev-utils": "^10.2.1",
+    "react-scripts": "3.4.1",
+    "typescript": "3.9.2"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.12.0"
+  },
+  "browserslist": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ]
+}

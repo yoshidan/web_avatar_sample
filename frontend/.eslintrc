@@ -1,0 +1,121 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "jsx": true,
+    "project": "./tsconfig.eslint.json",
+    "tsconfigRootDir": ".",
+    "extraFileExtensions": [".graphql"]
+  },
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "plugins": ["@typescript-eslint", "react-hooks", "jest", "prettier"],
+  "extends": [
+    "react-app",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "rules": {
+    /**
+     * @description rules of eslint official
+     */
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.tsx",
+          "**/stories.tsx",
+          "**/*.test.@(ts|tsx)",
+          "**/*.mock.ts",
+          "**/mock.ts"
+        ],
+        "optionalDependencies": false
+      }
+    ],
+    "import/extensions": ["error", "never", { "svg": "always" }],
+    "import/order": ["error", { "newlines-between": "always", "alphabetize": { "order": "asc" } }],
+    "no-unused-expressions": [
+      "warn",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ], // https://eslint.org/docs/rules/no-unused-expressions
+    "no-use-before-define": "off", // duplidate @typescript-eslint/no-use-before-define
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": ["react-i18next"]
+      }
+    ],
+    // arrow __typename on GraphQL types
+    "no-underscore-dangle": ["error", { "allow": ["__typename"] }],
+    "class-methods-use-this": "off",
+    /**
+     * @description rules of @typescript-eslint
+     */
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/explicit-function-return-type": "off", // annoying to force return type
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "generic",
+        "readonly": "generic"
+      }
+    ],
+    /**
+     * @description rules of eslint-plugin-react
+     */
+    "react/jsx-indent": "off",
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ], // also want to use with ".tsx"
+    "react/prop-types": "off", // Is this incompatible with TS props type?
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-curly-newline": "off", // prettierと競合する
+    "react/jsx-wrap-multilines": ["error", { "declaration": false, "assignment": false }], // https://github.com/prettier/prettier/issues/1009
+    "react/jsx-fragments": "off",
+    "react/button-has-type": "off",
+    /**
+     * jsx-a11y
+     */
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to", "onClick"]
+      }
+    ],
+    /**
+     * @description rules of eslint-plugin-prettier
+     */
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false
+      }
+    ]
+  }
+}

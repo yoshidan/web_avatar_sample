@@ -1,0 +1,8 @@
+node_modules
+dist
+build
+storybook-static
+
+src/graphql/gen/*.ts
+src/graphql/gen/*.tsx
+src/react-app-env.d.ts

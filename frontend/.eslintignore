@@ -1,0 +1,8 @@
+node_modules
+dist
+build
+storybook-static
+
+*.js
+
+src/react-app-env.d.ts
