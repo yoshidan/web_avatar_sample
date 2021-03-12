@@ -69,7 +69,7 @@
     "customize-cra": "0.9.1",
     "worker-plugin": "4.0.3",
     "react-app-rewired": "2.1.6",
-    "react-dev-utils": "^10.2.1",
+    "react-dev-utils": "^11.0.4",
     "react-scripts": "3.4.1",
     "typescript": "3.9.2"
   },
