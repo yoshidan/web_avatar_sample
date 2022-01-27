@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "facetransfer": "git+https://github.com/jeeliz/jeelizWeboji.git#e3ccd30be85fc3cc1281803b338a91fa68e72b1f",
-    "three": "0.114.0",
+    "three": "0.137.0",
     "@pixiv/three-vrm": "0.3.4",
     "camera-controls": "^1.12.1",
     "react": "16.13.1",
